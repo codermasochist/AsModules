@@ -1,5 +1,3 @@
-#meta developer: @codermasochist & @makimalove
-
 import random
 from telethon import TelegramClient
 from telethon.tl.types import InputMessagesFilterVideo, Message
@@ -40,13 +38,14 @@ class AsEditsMod(loader.Module):
     async def asedit(self, message: Message):
         """кидает эдиты с канала разработчика. @makimalove"""
         channel = "makimalove"
-        await utils.answer(message, self.strings["choosi_video"])
+        
+        choose_video_message = await utils.answer(message, self.strings["choosi_video"])
 
         try:
             videos = [
                 msg async for msg in self.client.iter_messages(
                     channel,
-                    limit=1000,
+                    limit=2500,
                     filter=InputMessagesFilterVideo,
                 )
             ]
@@ -58,13 +57,16 @@ class AsEditsMod(loader.Module):
             video = random.choice(videos)
             reply = await message.get_reply_message()
             reply_id = reply.id if reply else None
-            
+
             await self.client.send_file(
                 message.chat_id,
                 video,
                 caption=video.text or self.strings["selected_edit"],
                 reply_to=reply_id,
             )
+
+            await choose_video_message.delete()
+
             if message.out:
                 await message.delete()
 
@@ -88,7 +90,7 @@ class AsEditsMod(loader.Module):
             videos = [
                 msg async for msg in self.client.iter_messages(
                     custom_channel,
-                    limit=1000,
+                    limit=2500,
                     filter=InputMessagesFilterVideo,
                 )
             ]
