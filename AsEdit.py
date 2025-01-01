@@ -1,3 +1,5 @@
+#meta developer: @codermasochist & @makimalove
+
 import random
 from telethon import TelegramClient
 from telethon.tl.types import InputMessagesFilterVideo, Message
@@ -7,7 +9,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 
 @loader.tds
 class AsEditsMod(loader.Module):
-    """Модуль кидает ахуенные эдиты. by @codermasochist"""
+    """кидает ахуенные эдиты. by @codermasochist"""
 
     strings = {
         "name": "As Edit`s",
@@ -35,7 +37,7 @@ class AsEditsMod(loader.Module):
             print(f"?!?: {e}")
 
     @loader.command()
-    async def asedit(self, message: Message):
+    async def aseditcmd(self, message: Message):
         """кидает эдиты с канала разработчика. @makimalove"""
         channel = "makimalove"
         
@@ -65,6 +67,7 @@ class AsEditsMod(loader.Module):
                 reply_to=reply_id,
             )
 
+            # Удаление сообщения с индикатором подбора эдита
             await choose_video_message.delete()
 
             if message.out:
@@ -76,7 +79,7 @@ class AsEditsMod(loader.Module):
             await utils.answer(message, self.strings["no_videos_found"])
 
     @loader.command()
-    async def edit(self, message: Message):
+    async def editcmd(self, message: Message):
         """кидает рандомное видео с указанного в кфг"""
         custom_channel = self.config["custom_channel"]
 
@@ -84,7 +87,7 @@ class AsEditsMod(loader.Module):
             await utils.answer(message, self.strings["no_channel"])
             return
 
-        await utils.answer(message, self.strings["choosi_video"])
+        choose_video_message = await utils.answer(message, self.strings["choosi_video"])
 
         try:
             videos = [
@@ -109,10 +112,13 @@ class AsEditsMod(loader.Module):
                 caption=video.text or self.strings["selected_edit"],
                 reply_to=reply_id,
             )
-            if message.out:
-                await message.delete()
 
         except RPCError as e:
             await utils.answer(message, str(e))
         except Exception:
             await utils.answer(message, self.strings["no_videos_found"])
+            
+        await choose_video_message.delete()
+
+        if message.out:
+            await message.delete()
