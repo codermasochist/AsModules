@@ -3,7 +3,7 @@
 from .. import loader, utils
 
 @loader.tds
-class AscodeMod(loader.Module):
+class AsCodeMod(loader.Module):
     """сохраняет текст в файл и читает содержимое файлов. by @codermasochist"""
     
     strings = {
