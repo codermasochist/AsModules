@@ -1,15 +1,17 @@
+#meta developer: @codermasochist
+
 from .. import loader, utils
 
 @loader.tds
-class AsID(loader.Module):
+class AsIDMod(loader.Module):
     """
-    получает ид по реплаю 
+    получает ID по реплаю. by @codermasochist
     """
-    strings = {"name": "AsID"}
+    strings = {"name": "As ID"}
 
     async def идcmd(self, message):
         """
-        работает без префа, просто ид
+        — работает без префа, просто "ид".
         """
         reply = await message.get_reply_message()
         args = utils.get_args(message)
@@ -38,7 +40,7 @@ class AsID(loader.Module):
 
     async def watcher(self, message):
         """
-        Обрабатывает команду "ид" без префикса, доступную только для владельца.
+        ну тут пон
         """
         if message.sender_id != (await message.client.get_me()).id:
             return
