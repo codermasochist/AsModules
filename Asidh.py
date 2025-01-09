@@ -4,10 +4,10 @@ from telethon import events
 from .. import loader, utils
 
 @loader.tds
-class Asidh(loader.Module):
-    """Приветствие с ID нового участника. by @codermasochist"""
+class AsidhMod(loader.Module):
+    """Приветствие с ID. by @codermasochist"""
 
-    strings = {"name": "Asidh"}
+    strings = {"name": "As welcome ID"}
 
     async def client_ready(self, client, db):
         self.client = client
@@ -27,8 +27,8 @@ class Asidh(loader.Module):
                 )
 
     @loader.command()
-    async def idh(self, message):
-        """Включает приветствие с ID."""
+    async def onidcmd(self, message):
+        """— включает приветствие с ID."""
         chat_id = utils.get_chat_id(message)
         current_status = self.db.get(self.strings["name"], "welcome_chat_id", None)
 
@@ -39,8 +39,8 @@ class Asidh(loader.Module):
             await message.respond("<b><emoji document_id=4918354603281482671>👋</emoji> Приветствие с ID включено.</b>")
 
     @loader.command()
-    async def idn(self, message):
-        """Отключает приветствие с ID"""
+    async def offidcmd(self, message):
+        """— отключает приветствие с ID"""
         chat_id = utils.get_chat_id(message)
         current_status = self.db.get(self.strings["name"], "welcome_chat_id", None)
 
