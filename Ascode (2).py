@@ -1,16 +1,18 @@
+#meta developer: @codermasochist
+
 from .. import loader, utils
 
 @loader.tds
-class Ascode(loader.Module):
+class AscodeMod(loader.Module):
     """сохраняет текст в файл и читает содержимое файлов. by @codermasochist"""
     
     strings = {
-        "name": "Ascode",
+        "name": "As Code",
     }
     
     async def asccmd(self, message):
         """
-        ответом на текст - сохраняет в файл.
+        — сохраняет в файл.
         """
         args = utils.get_args_raw(message)
         
@@ -29,7 +31,7 @@ class Ascode(loader.Module):
 
     async def readfcmd(self, message):
         """
-        ответом на файл, достает содержимое файла.
+        — достает содержимое файла.
         """
         reply = await message.get_reply_message()
         if not reply or not reply.file:
