@@ -1,4 +1,4 @@
-#meta developer: @codermasochist
+# meta developer: @codermasochist
 
 from .. import loader, utils
 
