@@ -1,4 +1,4 @@
-#meta developer: @codermasochist & @makimalove
+# meta developer: @codermasochist & @makimalove
 
 import random
 from telethon import TelegramClient
