@@ -3,11 +3,11 @@
 from .. import loader, utils
 
 @loader.tds
-class AsCodeMod(loader.Module):
+class AsCode(loader.Module):
     """сохраняет текст в файл и читает содержимое файлов. by @codermasochist"""
     
     strings = {
-        "name": "As Code",
+        "name": "AsCode",
     }
     
     async def asccmd(self, message):
