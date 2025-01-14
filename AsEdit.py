@@ -12,7 +12,7 @@ class AsEdits(loader.Module):
     """кидает ахуенные эдиты. by @codermasochist"""
 
     strings = {
-        "name": "As Edits",
+        "name": "AsEdits",
         "choosi_video": "<emoji document_id=5217697679030637222>⏳</emoji> <b>подбираем эдит...</b>",
         "no_channel": "<b>no channel in config</b> <emoji document_id=5211061572306219675>🤨</emoji>",
         "no_videos_found": "<emoji document_id=5305381957524272531>❌</emoji> <b>could not find video in channel.</b>",
