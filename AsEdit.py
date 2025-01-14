@@ -67,7 +67,6 @@ class AsEdits(loader.Module):
                 reply_to=reply_id,
             )
 
-            # Удаление сообщения с индикатором подбора эдита
             await choose_video_message.delete()
 
             if message.out:
