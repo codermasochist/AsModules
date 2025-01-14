@@ -3,11 +3,11 @@
 from .. import loader, utils
 
 @loader.tds
-class AsIDMod(loader.Module):
+class AsID(loader.Module):
     """
     получает ID по реплаю. by @codermasochist
     """
-    strings = {"name": "As ID"}
+    strings = {"name": "AsID"}
 
     async def идcmd(self, message):
         """
