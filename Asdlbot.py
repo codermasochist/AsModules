@@ -4,9 +4,9 @@ from .. import loader, utils
 import asyncio
 
 @loader.tds
-class AsdlbotMod(loader.Module):
+class Asdlbot(loader.Module):
     """качает видео с тт/инст & ютуб/пин через ботов"""
-    strings = {"name": "As dl bot"}
+    strings = {"name": "Asdlbot"}
 
     async def is_conversation_active(self, bot):
         """Проверка, есть ли активная беседа с ботом"""
