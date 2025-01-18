@@ -48,7 +48,7 @@ class Asdlbot(loader.Module):
             except Exception as e:
                 await utils.answer(message, f"<emoji document_id=5210952531676504517>❌</emoji> <b>error while downloading.</b>\n{str(e)}")
 
-    async def mdlcmd(self, message):
+    async def ypdlcmd(self, message):
         """<ссылка> — скачать видео с ютуб/пинтерест"""
         args = utils.get_args_raw(message)
         if not args:
