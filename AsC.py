@@ -7,10 +7,10 @@ class AsCode(loader.Module):
     """сохраняет текст в файл и читает содержимое файлов. by @codermasochist"""
     
     strings = {
-        "name": "AsCode",
+        "name": "AsC",
     }
     
-    async def asccmd(self, message):
+    async def sfcmd(self, message):
         """
         — сохраняет в файл.
         """
@@ -29,7 +29,7 @@ class AsCode(loader.Module):
         
         await self.client.send_file(message.peer_id, file_name)
 
-    async def readfcmd(self, message):
+    async def rfcmd(self, message):
         """
         — достает содержимое файла.
         """
