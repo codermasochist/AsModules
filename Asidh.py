@@ -4,7 +4,7 @@ from telethon import events
 from .. import loader, utils
 
 @loader.tds
-class AsWelcomeId(loader.Module):
+class AsIDW(loader.Module):
     """Приветствие с ID. by @codermasochist"""
 
     strings = {"name": "As welcome ID"}
