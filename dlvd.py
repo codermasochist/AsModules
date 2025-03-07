@@ -30,7 +30,7 @@ class DLVD(loader.Module):
             await utils.answer(message, "<emoji document_id=5253577054137362120>🔗</emoji> <b>введи ссылку правильно.</b>")
             return
 
-        ttsave_bot = "@ttsavebot"
+        ttsave_bot = "@TopSaverBot"
         chat_id = message.chat_id
 
         async with self.client.conversation(ttsave_bot) as conv:
