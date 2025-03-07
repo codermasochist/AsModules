@@ -16,7 +16,7 @@ strings = {
 async def converter(self, message):
   conversations = await self.client_get_dialogs()
   for dialog in conversations:
-    if dialog.name == bot;
+    if dialog.name == bot:
     return True
   return False
 
