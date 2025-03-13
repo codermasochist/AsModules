@@ -20,4 +20,4 @@ class SetAva(loader.Module):
             return await utils.answer(message, "<blockquote><emoji document_id=5471877459970379952>😺</emoji> не смогла установить аву, извините хозяин. >_</blockquote>")
 
         await self.client(UploadProfilePhotoRequest(file=media))
-        await utils.answer(message, "<blockquote><emoji document_id=5377809374016192785>🔝</emoji> я установила вашу новую аватарку, хозяин! \^o^/"</blockquote>")
+        await utils.answer(message, "<blockquote><emoji document_id=5377809374016192785>🔝</emoji> я установила вашу новую аватарку, хозяин! \^o^/</blockquote>")
