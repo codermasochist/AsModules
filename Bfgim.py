@@ -23,7 +23,7 @@ class Bfgim(loader.Module):
                 reply = await message.get_reply_message()
                 user_id = reply.sender_id
             else:
-                await message.reply("укажи ид даун.")
+                await message.reply("укажи ид или реплай")
                 return
         else:
             user = args[0]
@@ -45,7 +45,7 @@ class Bfgim(loader.Module):
             [{"text": "профиль", "callback": self.profile, "args": (user_id,)}],
         ]
         
-        text = f"<b>выберите для игрока:</b> <code>{user_id}: </code>"
+        text = f"<b>выберите для игрока:</b>\n<code>{user_id} </code>"
         
         if is_inline:
             await call.edit(text, reply_markup=buttons)
