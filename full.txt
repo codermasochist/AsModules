@@ -2,3 +2,5 @@ AsEdit
 Bfgim
 GRR
 cfile
+TonDonate 
+MassMailing
