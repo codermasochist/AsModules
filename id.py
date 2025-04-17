@@ -4,8 +4,8 @@ from .. import loader, utils
 
 @loader.tds
 class id(loader.Module):
-    
     """получает ид юзера"""
+    
     strings = {
         "name": "id?",
         "hz": '<blockquote><emoji document_id=5258011929993026890>👤</emoji> : {gay}</blockquote>\n',
