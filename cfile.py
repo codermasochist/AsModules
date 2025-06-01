@@ -11,7 +11,7 @@
 (C) 2025 t.me/kshmods
 Licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
 """
-# meta developer: @kshmods
+# meta developer: @AssaMods
 
 import os
 from .. import loader, utils
