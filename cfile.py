@@ -35,7 +35,7 @@ class CFile(loader.Module):
         try:
             with open(filename, "w", encoding="utf-8") as f:
                 f.write(text)
-            await message.client.send_file(message.chat_id, filename, reply_to=pidor.id if pidor else None)
+            await message.client.send_file(message.chat_id, filename, reply_to=reply.id if reply else None)
         except Exception as e:
             await utils.answer(message, f"Oopsies: {e}")
         finally:
