@@ -7,3 +7,4 @@ MassMailing
 decimalage
 id
 tonviewer
+StarsRates
