@@ -1,10 +1,6 @@
 AsEdit
-Bfgim
-GRR
-cfile
 TonDonate 
 MassMailing
 decimalage
-id
 tonviewer
 StarsRates
