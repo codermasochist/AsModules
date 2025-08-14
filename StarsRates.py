@@ -1,4 +1,5 @@
 # meta developer: @codermasochist
+# meta banner: https://raw.githubusercontent.com/codermasochist/AsModules/refs/heads/main/assets/fragment-stars.png
 # requires: telegram-stars-rates
 
 import asyncio
