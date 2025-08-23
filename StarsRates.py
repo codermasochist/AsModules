@@ -18,36 +18,46 @@ class StarsRates(loader.Module):
         "invalid": "<blockquote><emoji document_id=6037514847443227774>⭐️</emoji> <b><i>укажите правильное количество звёзд (число)</i></b></blockquote>",
         "loading": "<blockquote><emoji document_id=6014655953457123498>💱</emoji><b> <i>получаю курс звёзд...</i></b></blockquote>"
     }
-    
+
+        async def get_ton_to_usdt(self):
+    	url = "https://tonapi.io/v2/rates?tokens=ton&currencies=usdt"
+    	try:
+    		async with aiohttp.ClientSession() as s:
+    			async with s.get(url) as resp:
+    				data = await resp.json()
+    				return data["rates"]["TON"]["prices"]["USDT"]		
+    	except:
+    		return None
+    		
     async def get_usdt_to_rub(self):
         url = "https://tonapi.io/v2/rates?tokens=usdt&currencies=rub"
         try:
             async with aiohttp.ClientSession() as session:
-                async with session.get(url) as response:
-                    data = await response.json()
+                async with session.get(url) as resp:
+                    data = await resp.json()
                     return data["rates"]["USDT"]["prices"]["RUB"]
         except:
             return None
 
     async def stars_to_all_currencies(self, amount):
-        usd_to_rub = await self.get_usdt_to_rub()
-        if usd_to_rub is None:
-            return None
-            
-        result = await utils.run_sync(get_stars_rate)
-        ton_per_star = result['ton_per_star']
-        usdt_per_star = result['usdt_per_star']
-
-        ton = ton_per_star * amount
-        usdt = usdt_per_star * amount
-        rub = usdt * usd_to_rub
-
-        return {
-            "stars": amount,
+    	usd_to_rub = await self.get_usdt_to_rub()
+    	ton_to_usdt = await self.get_ton_to_usdt()
+    	if usd_to_rub is None or ton_to_usdt is None:
+    		 return None
+    		 
+    	result = await utils.run_sync(get_stars_rate)
+    	ton_per_star = result["ton_per_star"]
+    	
+    	ton = ton_per_star * amount
+    	usdt = ton * ton_to_usdt
+    	rub = usdt * usd_to_rub
+    	
+    	return {
+    	    "stars": amount,
             "ton": ton,
             "usdt": usdt,
             "rub": rub
-        }
+            }
 
     async def srcmd(self, m):
         """— <amount> stars. """
