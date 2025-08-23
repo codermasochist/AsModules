@@ -52,12 +52,16 @@ class StarsRates(loader.Module):
     async def srcmd(self, m):
         """— <amount> stars. """
         args = utils.get_args_raw(m)
-        if not args or not args.isdigit():
+        if not args:
+            await utils.answer(m, self.strings("invalid"))
+            return
+        try:
+            amount = float(args)
+        except ValueError:
             await utils.answer(m, self.strings("invalid"))
             return
 
         loading = await utils.answer(m, self.strings["loading"])
-        amount = int(args)
         converted = await self.stars_to_all_currencies(amount)
         
         if not converted:
