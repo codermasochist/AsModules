@@ -19,8 +19,8 @@ class StarsRates(loader.Module):
         "loading": "<blockquote><emoji document_id=6014655953457123498>💱</emoji><b> <i>получаю курс звёзд...</i></b></blockquote>"
     }
 
-        async def get_ton_to_usdt(self):
-    	url = "https://tonapi.io/v2/rates?tokens=ton&currencies=usdt"
+    async def get_ton_to_usdt(self):
+        url = "https://tonapi.io/v2/rates?tokens=ton&currencies=usdt"
     	try:
     		async with aiohttp.ClientSession() as s:
     			async with s.get(url) as resp:
