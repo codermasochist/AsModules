@@ -21,13 +21,13 @@ class StarsRates(loader.Module):
 
     async def get_ton_to_usdt(self):
         url = "https://tonapi.io/v2/rates?tokens=ton&currencies=usdt"
-    	try:
-    		async with aiohttp.ClientSession() as s:
-    			async with s.get(url) as resp:
-    				data = await resp.json()
-    				return data["rates"]["TON"]["prices"]["USDT"]		
-    	except:
-    		return None
+        try:
+            async with aiohttp.ClientSession() as s:
+                async with s.get(url) as resp:
+                    data = await resp.json()
+                    return data["rates"]["TON"]["prices"]["USDT"]
+        except:
+            return None
     		
     async def get_usdt_to_rub(self):
         url = "https://tonapi.io/v2/rates?tokens=usdt&currencies=rub"
