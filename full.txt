@@ -4,3 +4,4 @@ MassMailing
 decimalage
 tonviewer
 StarsRates
+GiftsVisibility
