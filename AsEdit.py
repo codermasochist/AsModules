@@ -33,7 +33,7 @@ class AsEdits(loader.Module):
 
     @loader.command()
     async def aseditcmd(self, message: Message):
-        """кидает эдиты с канала разработчика. @makimalove"""
+        """кидает эдиты с канала разработчика."""
         channel = "aseditsm"
         
         choose_video_message = await utils.answer(message, self.strings["choosi_video"])
