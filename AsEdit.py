@@ -5,7 +5,6 @@ from telethon import TelegramClient
 from telethon.tl.types import InputMessagesFilterVideo, Message
 from telethon.errors import RPCError
 from .. import loader, utils
-from telethon.tl.functions.channels import JoinChannelRequest 
 
 @loader.tds
 class AsEdits(loader.Module):
@@ -30,15 +29,12 @@ class AsEdits(loader.Module):
 
     async def client_ready(self, client: TelegramClient, db):
         self.client = client
-        try:
-            await self.client(JoinChannelRequest('makimalove'))
-        except Exception as e:
-            await utils.answer(message, f"Errors: {e}")
+        await self.request_join("aseditsm", "the channel where the edits come from.")
 
     @loader.command()
     async def aseditcmd(self, message: Message):
         """кидает эдиты с канала разработчика. @makimalove"""
-        channel = "makimalove"
+        channel = "aseditsm"
         
         choose_video_message = await utils.answer(message, self.strings["choosi_video"])
 
