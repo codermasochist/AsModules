@@ -1,6 +1,5 @@
 AsEdits
 TonDonate
-MassMailing
 decimalage
 tonviewer
 StarsRates
