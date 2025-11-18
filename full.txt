@@ -1,4 +1,4 @@
-AsEdit
+AsEdits
 TonDonate 
 MassMailing
 decimalage
