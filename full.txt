@@ -4,3 +4,4 @@ decimalage
 tonviewer
 StarsRates
 GiftsVisibility
+Gulag
