@@ -1,7 +1,5 @@
 AsEdits
-TonDonate
 decimalage
-tonviewer
 StarsRates
 GiftsVisibility
 Gulag
