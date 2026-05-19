@@ -1,4 +1,4 @@
-# meta developer: @codermasochist
+# meta developer: @AssaMods
 # meta banner: https://raw.githubusercontent.com/codermasochist/AsModules/refs/heads/main/assets/fragment-stars.png
 # requires: telegram-stars-rates
 
