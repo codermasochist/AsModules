@@ -85,12 +85,12 @@ class StarsRates(loader.Module):
         """— <amount> stars."""
         args = utils.get_args_raw(m)
         if not args:
-            await utils.answer(m, self.strings("invalid"))
+            await utils.answer(m, self.strings["invalid"])
             return
         try:
             amount = float(args)
         except ValueError:
-            await utils.answer(m, self.strings("invalid"))
+            await utils.answer(m, self.strings["invalid"])
             return
 
         loading = await utils.answer(m, self.strings["loading"])
@@ -100,25 +100,25 @@ class StarsRates(loader.Module):
             await utils.answer(m, self.strings("error"))
             return
             
-        await utils.answer(loading, self.strings("result").format(stars=converted["stars"], ton=converted["ton"], usdt=converted["usdt"], rub=converted["rub"]))
+        await utils.answer(loading, self.strings["result"].format(stars=converted["stars"], ton=converted["ton"], usdt=converted["usdt"], rub=converted["rub"]))
     
     async def tsrcmd(self, m):
         """— <amount> ton. (TON to Stars)."""
         args = utils.get_args_raw(m)
         if not args:
-            await utils.answer(m, self.strings("invalid_ton"))
+            await utils.answer(m, self.strings["invalid_ton"])
             return
         try:
             amount = float(args)
         except ValueError:
-            await utils.answer(m, self.strings("invalid_ton"))
+            await utils.answer(m, self.strings["invalid_ton"])
             return
 
         loading = await utils.answer(m, self.strings["loading_ton"])
         converted = await self.ton_to_all_currencies(amount)
         
         if not converted:
-            await utils.answer(m, self.strings("error"))
+            await utils.answer(m, self.strings["error"])
             return
             
-        await utils.answer(loading, self.strings("result_ton").format(ton=converted["ton"], stars=converted["stars"], usdt=converted["usdt"], rub=converted["rub"]))
+        await utils.answer(loading, self.strings["result_ton"].format(ton=converted["ton"], stars=converted["stars"], usdt=converted["usdt"], rub=converted["rub"]))
